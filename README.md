@@ -1,7 +1,11 @@
-# miniproject1SG
+# INF 601 Advancd Programming with Python
+
+## miniproject1SG
+
+## Stephen Gabel
 
 ## Description
-This project will be usingthe packages numpy and matplotlib in order to create 5 graphs that output as PNG files.
+This project will be using the packages numpy and matplotlib in order to create 5 graphs that output as PNG files.
 
 ## Pip install instructions:
 
