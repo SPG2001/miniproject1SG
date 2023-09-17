@@ -5,6 +5,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import yfinance as yf
+from pathlib import Path
 
 #This grabs the stock information from yfinance and grabs the closing price information for the last 10 days
 
@@ -18,6 +19,12 @@ def getClosing(ticker):
         closingList.append(round(price , 2))
 
     return closingList
+
+#Creates the charts file and saves the charts to it.
+try:
+    Path("charts").mkdir()
+except FileExistsError:
+    pass
 
 #List of stocks I would like to see the prices of.
 stocks = ['MSFT', 'OSK', 'NVDA', 'KR', 'INTC']
@@ -48,7 +55,6 @@ for stock in stocks:
     plt.title('Closing Price for ' + stock)
     plt.axis([1, 10, low_price -3, high_price + 3])
 
-    #Saves the plot to the charts file.
     savefile = "charts/" + stock + '.png'
     plt.savefig(savefile)
 
