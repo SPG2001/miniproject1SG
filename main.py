@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import yfinance as yf
 
+#This grabs the stock information from yfinance and grabs the closing price information for the last 10 days
 
 def getClosing(ticker):
     stock = yf.Ticker(ticker)
@@ -18,8 +19,11 @@ def getClosing(ticker):
 
     return closingList
 
+#List of stocks I would like to see the prices of.
 stocks = ['MSFT', 'OSK', 'NVDA', 'KR', 'INTC']
 
+
+#Runs through each stock in the dictionary and makes a graph.
 for stock in stocks:
     stockClosing = np.array(getClosing(stock))
     days = list(range(1, len(stockClosing)+1))
@@ -41,6 +45,12 @@ for stock in stocks:
 #This makes labels for the graph
     plt.xlabel('Days')
     plt.ylabel('closing price')
-    plt.title('Closing Price for' + stock)
-    plt.axis([1, 10 ,low_price -3, high_price + 3])
+    plt.title('Closing Price for ' + stock)
+    plt.axis([1, 10, low_price -3, high_price + 3])
+
+    #Saves the plot to the charts file.
+    savefile = "charts/" + stock + '.png'
+    plt.savefig(savefile)
+
+    #Displays the charts.
     plt.show()
