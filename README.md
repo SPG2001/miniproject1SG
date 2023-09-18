@@ -5,11 +5,20 @@
 ## Stephen Gabel
 
 ## Description
-This project will be using the packages numpy and matplotlib in order to create 5 graphs that output as PNG files.
+This project will be using the packages numpy, matplotlib, and yfinance in order to create graphs that contain 
+the closing prices of five chosen stocks over the past 10 days.
 
 ## Pip install instructions:
 
 Please install the following packages:
 ```
 Pip install -r requirements.txt
+```
+
+## How to run:
+
+In a terminal window, type the following:
+
+```
+python main.py
 ```
